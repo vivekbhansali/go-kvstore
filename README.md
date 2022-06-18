@@ -1,6 +1,8 @@
 # go-kvstore
 
-Key-Value Store written in Go
+Simple Key-Value Store written in Go. This is a learning project with the aim to understand Go Programming language and also different Database Storage techniques. 
+
+The idea and the inspiration of this project comes from similar project by [gerlacdt](https://github.com/gerlacdt) called [db-key-value-store](https://github.com/gerlacdt/db-key-value-store).
 
 ## Build
 
@@ -21,26 +23,32 @@ make clean
 
 ## Usage
 
-### Set a new key-value in the store
+Open a terminal, and run the app.
+
+Open another terminal and start interacting with the KV store. 
+
+Here are some examples on how to use the KV store using [httpie](https://github.com/httpie/httpie) HTTP client.
+
+### Set a new `key-value` in the store
 
 ```bash
-http POST "http://localhost:8080/key" key=value
+http POST "http://localhost:8080/db/key" value
 ```
 
-### Get an existing key-value set from the store
+### Get an existing `value` for a given `key` from the store
 
 ```bash
-http GET "http://localhost:8080/key"
+http GET "http://localhost:8080/db/key"
 ```
 
-### Update an existing value for a given in the store
+### Update an existing `value` for a given `key` in the store
 
 ```bash
-http PUT "http://localhost:8080/key" value
+http PUT "http://localhost:8080/db/key" value
 ```
 
-### Delete an existing key-value set from the store
+### Delete an existing `key-value` set from the store
 
 ```bash
-http DELETE "http://localhost:8080/key"
+http DELETE "http://localhost:8080/db/key"
 ```
